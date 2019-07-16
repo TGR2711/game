@@ -18,7 +18,6 @@ public class EntityManager {
         }
     };
 
-
     public EntityManager(Handler handler, Player player){
         this.handler = handler;
         this.player = player;
@@ -36,8 +35,10 @@ public class EntityManager {
     public void render(Graphics g){
         for (Entity e : entities){
             e.render(g);
+            e.postRender();
         }
     }
+
     public void addentity(Entity e){
         entities.add(e);
     }

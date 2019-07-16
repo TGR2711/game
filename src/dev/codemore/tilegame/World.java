@@ -19,9 +19,9 @@ public class World {
         entityManager = new EntityManager(handler, new Player(handler, 100, 260));
         entityManager.addentity(new Tree(handler, 300,261));
         entityManager.addentity(new Tree(handler, 400,261));
-        
 
         loadworld(path);
+
         entityManager.getPlayer().setX(spawnx);
         entityManager.getPlayer().setY(spawny);
     }
@@ -59,10 +59,8 @@ public class World {
         return t;
     }
 
-    public Tile getTileAtScreenCoords(int screenX, int screenY) {
-        int tileX = screenX / 64;
-        int tileY = screenY / 64;
-        return Tile.tiles[tiles[tileX][tileY]];
+    Tile getTileAtScreenCoords(int screenX, int screenY) {
+        return gettile((screenX / TILEWIDTH), (screenY / TILEHEIGHT));
     }
 
     private void loadworld(String path) {

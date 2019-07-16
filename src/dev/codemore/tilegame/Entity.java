@@ -22,6 +22,8 @@ public abstract class Entity {
 
     public abstract void render(Graphics g);
 
+    abstract void postRender();
+
     public boolean checkentitycollisions(float xoffset, float yoffset){
         for (Entity e : handler.getWorld().getEntityManager().getEntities()){
             if(e.equals(this))

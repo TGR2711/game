@@ -13,14 +13,17 @@ public class Tree extends StaticEntity {
         bounds.height = 37;
     }
 
-
     @Override
     public void tick() {
-
     }
 
     @Override
     public void render(Graphics g) {
         g.drawImage(Assets.tree,(int) (x - handler.getGamecamera().getXoffset()),(int) (y - handler.getGamecamera().getYoffset()), width, height, null);
     }
+
+    @Override
+    void postRender() {
+    }
+
 }
